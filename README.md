@@ -38,8 +38,6 @@ iqra-task/
 │── package.json # Dependencies & scripts
 │── README.md # Project documentation like this
 
-Copy
-
 ---
 
 ## 📌 Installation & Setup
