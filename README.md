@@ -1,28 +1,26 @@
-# 🚀 Dynamic Form Application
+## 🚀 Dynamic Form Application
 
-### 🚀 Overview
-IQRA Task is an Angular-based dynamic form application that allows users to create and manage forms dynamically. It supports various field types (text, email, password, select, checkbox, and repeatable fields) and includes features like state persistence and toast notifications for a seamless user experience.
-
----
-
-## ✨ Features
-
-✅ **Dynamic Form Generation** – Create forms dynamically based on a provided schema.  
-✅ **Field Types** – Supports text, email, password, select, checkbox, and repeatable fields.  
-✅ **State Persistence** – Saves form progress to local storage and restores it on page reload.  
-✅ **Toast Notifications** – Displays success, error, and info notifications using `ngx-toastr`.  
-✅ **Validation** – Includes custom validators for required fields, minimum length, and email format.  
-✅ **Repeatable Fields** – Allows users to add or remove repeatable fields (e.g., hobbies).  
+### 📌 Overview
+IQRA Task is a modern, dynamic form application built with Angular that enables users to create and manage forms dynamically. It supports multiple field types, state persistence, and interactive notifications for an enhanced user experience.
 
 ---
 
-## 🛠️ Tech Stack
+### 🎯 Features
+✅ **Dynamic Form Generation** – Forms are generated based on a provided schema.  
+✅ **Multiple Field Types** – Supports text, email, password, select, checkbox, and repeatable fields.  
+✅ **State Persistence** – Saves progress in local storage and restores on reload.  
+✅ **Real-Time Validation** – Custom validators ensure proper input handling.  
+✅ **Toast Notifications** – Displays feedback messages using `ngx-toastr`.  
+✅ **Repeatable Fields** – Allows users to add/remove repeatable fields (e.g., hobbies).  
 
+---
+
+### 🛠️ Tech Stack
 - **Frontend:** Angular, TypeScript, SCSS  
 - **State Management:** RxJS  
 - **UI Framework:** Bootstrap, ngx-toastr  
 - **Form Handling:** Angular Reactive Forms  
-- **Validation:** Custom validators for dynamic fields  
+- **Validation:** Custom dynamic field validators  
 
 ---
 
@@ -30,45 +28,49 @@ IQRA Task is an Angular-based dynamic form application that allows users to crea
 ```
 iqra-task/
 │── src/
-│ ├── app/
-│ │ ├── components/ # Reusable components (e.g., dynamic form)
-│ │ ├── services/ # Services for form handling and state management
-│ │ ├── shared/ # Shared utilities and validators
-│ │ ├── environments/ # Environment configurations
-│── angular.json # Angular project configuration
-│── package.json # Dependencies & scripts
-│── README.md # Project documentation like this
-
+│   ├── app/
+│   │   ├── components/  # Reusable components (e.g., dynamic form)
+│   │   ├── services/    # Services for form handling and state management
+│   │   ├── shared/      # Shared utilities and validators
+│── angular.json         # Angular project configuration
+│── package.json         # Dependencies & scripts
+│── README.md            # Project documentation like this
 ```
 
 ---
 
-## 📌 Installation & Setup
+### 📌 Installation & Setup
 
-### 1️⃣ Clone the Repository
+#### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/YOUSSEF-R-KAMEL/IQRA-Task.git
 cd IQRA-Task
-2️⃣ Install Dependencies
-bash
-Copy
+```
+
+#### 2️⃣ Install Dependencies
+```bash
 npm install
-3️⃣ Run the Development Server
-bash
-Copy
+```
+
+#### 3️⃣ Run the Development Server
+```bash
 ng serve
-Then open http://localhost:4200/ in your browser.
+```
+Then open `http://localhost:4200/` in your browser.
 
-4️⃣ Build for Production
-bash
-Copy
+#### 4️⃣ Build for Production
+```bash
 ng build --configuration production
-🎯 Usage
-Form Schema
-The form is generated based on a schema provided to the DynamicFormComponent. Here's an example schema:
+```
 
-json
-Copy
+---
+
+### 🎯 Usage
+
+#### 📌 Form Schema
+The form is generated based on a JSON schema provided to the `DynamicFormComponent`. Below is an example:
+
+```json
 {
   "fields": [
     {
@@ -109,27 +111,30 @@ Copy
     }
   ]
 }
-Adding a New Field
-To add a new field to the form, update the schema with the desired field configuration. For example, to add a checkbox field:
+```
 
-json
-Copy
+#### ➕ Adding a New Field
+To add a new field, modify the schema with the desired field configuration. Example of adding a checkbox:
+
+```json
 {
   "name": "subscribe",
   "label": "Subscribe to Newsletter",
   "type": "checkbox"
 }
-Clearing Saved Progress
-Click the Clear Saved Progress button to reset the form and clear the saved state from local storage.
+```
 
-Submitting the Form
-Once all required fields are filled out correctly, click the Submit button to submit the form. A success toast notification will be displayed.
+#### 🗑️ Clearing Saved Progress
+Click the **Clear Saved Progress** button to reset the form and remove saved data from local storage.
 
-📞 Contact
+#### ✅ Submitting the Form
+Once all required fields are correctly filled, click **Submit** to complete the process. A success toast notification will confirm the submission.
+
+---
+
+### 📞 Contact
 For any inquiries, reach out:
-
-GitHub: YOUSSEF-R-KAMEL
-
-Email: youssefrafat70@gmail.com
+- **GitHub:** [YOUSSEF-R-KAMEL](https://github.com/YOUSSEF-R-KAMEL)
+- **Email:** youssefrafat70@gmail.com
 
 Made with ❤️ by Youssef Rafat Kamel
