@@ -135,6 +135,6 @@ Once all required fields are correctly filled, click **Submit** to complete the 
 ### 📞 Contact
 For any inquiries, reach out:
 - **GitHub:** [YOUSSEF-R-KAMEL](https://github.com/YOUSSEF-R-KAMEL)
-- **Email:** youssefrafat70@gmail.com
+- **Email:** se.youssefrafat@gmail.com
 
 Made with ❤️ by Youssef Rafat Kamel
