@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Signal, signal } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
@@ -90,7 +90,7 @@ export class DynamicFormComponent implements OnInit {
     return field.name;
   }
 
-  trackByValue(index: number, option: any): string {
+  trackByValue(option: any): string {
     return option.value;
   }
 
@@ -98,7 +98,7 @@ export class DynamicFormComponent implements OnInit {
     if (this.form.valid) {
       console.log('Form Submitted:', this.form.value);
       this.toastr.success('Form submitted successfully!', 'Success');
-      localStorage.removeItem('formState'); // Clear saved state on successful submission
+      localStorage.removeItem('formState');
     } else {
       this.toastr.error('Please fill out all required fields correctly.', 'Error');
     }
@@ -106,7 +106,7 @@ export class DynamicFormComponent implements OnInit {
 
   clearFormState() {
     localStorage.removeItem('formState');
-    this.form.reset(); // Optional: Reset the form to its initial state
+    this.form.reset();
     this.toastr.info('Saved progress cleared.', 'Info');
   }
 
