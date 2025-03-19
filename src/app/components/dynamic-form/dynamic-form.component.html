@@ -1,0 +1,101 @@
+<div class="container">
+  <form *ngIf="formSchema" [formGroup]="form" (ngSubmit)="onSubmit()" class="container mt-4">
+    <ng-container *ngFor="let field of fields(); trackBy: trackByName">
+      <div class="mb-3">
+        @if (field.type !== 'repeatable') {
+          <label class="form-label">{{ field.label }}</label>
+        }
+        @if (field.type === 'text' || field.type === 'email' || field.type === 'password') {
+          <input
+            [type]="field.type"
+            [placeholder]="field.placeholder"
+            [formControlName]="field.name"
+            class="form-control" />
+        }
+
+        @if (field.type === 'select') {
+          <select [formControlName]="field.name" class="form-select">
+            <option value="">Select an option</option>
+            <ng-container *ngFor="let option of field.options; trackBy: trackByValue">
+              <option [value]="option.value">{{ option.label }}</option>
+            </ng-container>
+          </select>
+        }
+
+        @if (field.type === 'checkbox') {
+          <div class="form-check">
+            <input type="checkbox" [formControlName]="field.name" class="form-check-input" />
+            <label class="form-check-label">{{ field.label }}</label>
+          </div>
+        }
+
+        @if (field.type === 'repeatable') {
+          <div [formArrayName]="field.name" class="mb-3">
+            <h4>{{ field.label }}</h4>
+
+            <ng-container *ngFor="let hobbyCtrl of getFieldControls(field.name); let i = index">
+              <div [formGroupName]="i" class="mb-2">
+                <div class="input-group">
+                  <input
+                    formControlName="hobby"
+                    placeholder="{{ field.subFields[0].placeholder }}"
+                    class="form-control" />
+                  <button
+                    type="button"
+                    (click)="removeHobby(field.name, i)"
+                    class="btn btn-danger">
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+
+            <button
+              type="button"
+              (click)="addHobby(field.name)"
+              class="btn btn-primary">
+              Add Hobby
+            </button>
+
+            @if (form.controls[field.name].invalid && form.controls[field.name].touched) {
+              <div class="text-danger mt-2">
+                @if (form.controls[field.name].hasError('minLengthArray')) {
+                  <small>At least one hobby is required.</small>
+                }
+              </div>
+            }
+          </div>
+        }
+
+        @if (form.controls[field.name].invalid && form.controls[field.name].touched) {
+          <div class="text-danger mt-2">
+            @if (form.controls[field.name].hasError('required')) {
+              <small>This field is required.</small>
+            }
+            @if (form.controls[field.name].hasError('minlength')) {
+              <small>Minimum length is {{ field.validators.minLength }}</small>
+            }
+            @if (form.controls[field.name].hasError('email')) {
+              <small>Invalid email format</small>
+            }
+          </div>
+        }
+      </div>
+    </ng-container>
+
+    <h3>Live Form Data</h3>
+    <pre class="bg-light p-3">{{ form.value | json }}</pre>
+
+    <button type="submit" [disabled]="form.invalid" class="btn btn-success">
+      Submit
+    </button>
+  </form>
+
+  <button
+    type="button"
+    (click)="clearFormState()"
+    class="btn btn-warning my-4">
+    Clear Saved Progress
+  </button>
+
+</div>
