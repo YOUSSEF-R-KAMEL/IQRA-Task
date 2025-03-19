@@ -1,4 +1,4 @@
-# 🚀 IQRA Task - Dynamic Form Application
+# 🚀 Dynamic Form Application
 
 ### 🚀 Overview
 IQRA Task is an Angular-based dynamic form application that allows users to create and manage forms dynamically. It supports various field types (text, email, password, select, checkbox, and repeatable fields) and includes features like state persistence and toast notifications for a seamless user experience.
@@ -26,7 +26,8 @@ IQRA Task is an Angular-based dynamic form application that allows users to crea
 
 ---
 
-## 📂 Project Structure
+### 📂 Project Structure
+```
 iqra-task/
 │── src/
 │ ├── app/
@@ -37,6 +38,8 @@ iqra-task/
 │── angular.json # Angular project configuration
 │── package.json # Dependencies & scripts
 │── README.md # Project documentation like this
+
+```
 
 ---
 
