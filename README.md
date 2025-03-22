@@ -12,7 +12,7 @@ IQRA Task is a modern, dynamic form application built with Angular that enables 
 ✅ **Real-Time Validation** – Custom validators ensure proper input handling.  
 ✅ **Toast Notifications** – Displays feedback messages using `ngx-toastr`.  
 ✅ **Repeatable Fields** – Allows users to add/remove repeatable fields (e.g., hobbies).  
-✅ **Password Toggle Feature – Easily show or hide password input fields..  
+✅ **Password Toggle Feature** – Easily show or hide password input fields..  
 
 ---
 
@@ -30,6 +30,7 @@ IQRA Task is a modern, dynamic form application built with Angular that enables 
 iqra-task/
 │── src/
 │   ├── app/
+│   │   ├── directives/  # password toggle directive to show and hidden password
 │   │   ├── components/  # Reusable components (e.g., dynamic form)
 │   │   ├── services/    # Services for form handling and state management
 │   │   ├── shared/      # Shared utilities and validators
