@@ -5,12 +5,27 @@
         @if (field.type !== 'repeatable') {
           <label class="form-label">{{ field.label }}</label>
         }
-        @if (field.type === 'text' || field.type === 'email' || field.type === 'password') {
+        @if (field.type === 'text' || field.type === 'email') {
           <input
             [type]="field.type"
             [placeholder]="field.placeholder"
             [formControlName]="field.name"
             class="form-control" />
+        }
+
+        @if (field.type === 'password') {
+          <div class="input-group">
+            <input
+              #passwordInput
+              type="password"
+              [placeholder]="field.placeholder"
+              [formControlName]="field.name"
+              class="form-control"
+            />
+            <button type="button" class="btn btn-outline-secondary" style="width: 55px;" appPasswordToggle>
+              <i class="fa fa-eye"></i>
+            </button>
+          </div>
         }
 
         @if (field.type === 'select') {

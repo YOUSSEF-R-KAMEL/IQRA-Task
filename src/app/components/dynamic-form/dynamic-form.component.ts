@@ -2,11 +2,12 @@ import { Component, Input, OnInit, signal } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { PasswordToggleDirective } from '../../directives/password-toggle.directive';
 
 @Component({
   selector: 'app-dynamic-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule
+  imports: [ReactiveFormsModule, CommonModule, PasswordToggleDirective
   ],
   templateUrl: './dynamic-form.component.html',
   styleUrls: ['./dynamic-form.component.scss']
